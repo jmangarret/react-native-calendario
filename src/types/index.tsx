@@ -7,6 +7,17 @@ import {
   StyleProp,
 } from 'react-native';
 import { MarkedDays, ThemeType as MonthThemeType } from 'react-native-month';
+import { DayDot, DayTheme } from 'react-native-month/lib/typescript/src/types';
+
+interface DayThemeNew extends DayTheme {
+  activeDayMiddleContainerStyle?: ViewStyle;
+}
+declare type MarkedDayNew = {
+  dots?: DayDot[];
+  theme?: DayThemeNew;
+};
+
+export declare type MarkedDaysNew = Record<string, MarkedDayNew>;
 
 export type RangeType = {
   endDate?: Date;
